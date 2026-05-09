@@ -158,54 +158,6 @@ SUSPICIOUS_ATTACHMENT_PATTERNS = [
     r'attached (file|document|invoice)',
     r'open the attachment',
     r'download (the )?(attached|file|document)',
-    # Marketing / Promotional spam
-    'your workflow': 3, 'going live': 4, 'game changer': 6,
-    'hang out with us': 5, 'be the first to know': 7,
-    'you won\'t want to miss': 8, 'major addition': 4,
-    'transform your': 5, 'daily routine': 3,
-    'trim your': 4, 'tech stack': 3, 'monthly subscriptions': 5,
-    'save on your': 5, 'expensive': 4, 'disconnected tools': 4,
-    'finishing touches': 4, 'digital presence': 3,
-    'join our community': 6, 'your input': 3,
-    'putting the finishing': 5, 'leaner': 3,
-    'powerful dashboard': 5, 'manual digging': 4,
-    'endless scrolling': 4, 'shape what comes next': 6,
-    'we can\'t wait': 5, 'give you back': 5,
-    'hours of your week': 6, 'single powerful': 4,
-
-    # Vague hype language
-    'big news': 5, 'exciting news': 5, 'stay tuned': 4,
-    'coming soon': 4, 'launching soon': 5, 'go live': 4,
-    'sneak peek': 5, 'behind the scenes': 3,
-    'next level': 5, 'level up': 5, 'game changing': 6,
-    'revolutionary': 6, 'groundbreaking': 6,
-    'we\'ve been busy': 4, 'we\'ve been quiet': 4,
-    'something big': 6, 'something exciting': 5,
-    'dont miss out': 7, 'don\'t miss out': 7,
-    'limited spots': 7, 'reserve your spot': 7,
-    'early access': 6, 'exclusive access': 6,
-    'insider access': 6, 'founding member': 6,
-    'join the waitlist': 7, 'join now': 5,
-    'sign up free': 6, 'try for free': 5,
-    'free trial': 6, 'no commitment': 5,
-    'cancel anytime': 4, 'no strings attached': 6,
-
-    # Newsletter / unsubscribe signals
-    'you are receiving this': 4, 'you received this': 4,
-    'unsubscribe': 3, 'manage preferences': 3,
-    'email preferences': 3, 'opt out': 4,
-    'update your preferences': 4, 'view in browser': 3,
-    'view online': 3, 'this email was sent': 4,
-
-    # Soft upsell
-    'upgrade your plan': 6, 'upgrade now': 6,
-    'premium features': 5, 'unlock features': 6,
-    'unlock premium': 6, 'go premium': 6,
-    'boost your': 5, 'supercharge your': 6,
-    'skyrocket': 7, 'explode your': 7,
-    'passive income': 8, 'side hustle': 6,
-    'work from home': 6, 'be your own boss': 7,
-    'financial freedom': 7,
 ]
 
 # ─────────────────────────────────────────────
@@ -404,7 +356,7 @@ def analyze_text(text):
     if spam_prob >= 60:
         verdict = 'SPAM'
         risk_level = 'CRITICAL RISK' if spam_prob >= 80 else 'HIGH RISK'
-    elif spam_prob >= 25:
+    elif spam_prob >= 35:
         verdict = 'SUSPICIOUS'
         risk_level = 'MEDIUM RISK'
     else:
