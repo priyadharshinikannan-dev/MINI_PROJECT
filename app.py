@@ -353,10 +353,10 @@ def analyze_text(text):
     spam_prob = round(min(max(spam_prob_raw * 100, 1.0), 99.0), 1)
     ham_prob = round(100 - spam_prob, 1)
 
-    if spam_prob >= 60:
+    if spam_prob >= 10:
         verdict = 'SPAM'
         risk_level = 'CRITICAL RISK' if spam_prob >= 80 else 'HIGH RISK'
-    elif spam_prob >= 35:
+    elif spam_prob >= 15:
         verdict = 'SUSPICIOUS'
         risk_level = 'MEDIUM RISK'
     else:
